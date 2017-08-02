@@ -34,7 +34,7 @@ public class SpriteAnim : MonoBehaviour {
         animRate = 10;
         currState = State.Idle;
         turnTime = 0;
-        turnThreshold = 0.04f;
+        turnThreshold = 0.01f;
         states = new List<State>();
         states.Add(State.Idle);
         states.Add(State.Turn);

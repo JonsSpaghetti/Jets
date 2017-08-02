@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
+//TODO - Create IFireable interface - set EnemyFire and PlayerFire as "Firables" - Create ShipController to do firing etc..
 public class EnemyFire : MonoBehaviour {
     public float fireTimer;
     public float fireCd;
