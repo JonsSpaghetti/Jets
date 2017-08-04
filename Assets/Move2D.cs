@@ -41,4 +41,6 @@ public class Move2D : MonoBehaviour {
         }
         //TODO - add movement to flip player to other side of screen if they go out of bounds.
     }
+    void Update() {
+    }
 }

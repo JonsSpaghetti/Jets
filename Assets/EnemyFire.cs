@@ -9,6 +9,7 @@ public class EnemyFire : MonoBehaviour {
     public float fireCd;
     public float fireCdTimer;
     public PrimaryFire FireScript;
+    public bool visible;
     // Use this for initialization
     void Start() {
         fireTimer = 1.0f;
@@ -19,14 +20,20 @@ public class EnemyFire : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (fireTimer > 0) {
-            fireTimer -= Time.deltaTime;
-        }
-        else {
-            if (fireTimer < 0) {
-                FireScript.Shoot();
+        if (visible) {
+            if (fireTimer > 0) {
+                fireTimer -= Time.deltaTime;
             }
-            fireTimer = Random.value;
+            else {
+                if (fireTimer < 0) {
+                    FireScript.Shoot();
+                }
+                fireTimer = Random.value;
+            }
         }
+    }
+
+    void OnWillRenderObject() {
+        visible = true;
     }
 }
